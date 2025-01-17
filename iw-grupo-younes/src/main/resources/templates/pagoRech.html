@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pago rechazado</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+<h1>Pago rechazado</h1>
+<h2>Razón del estado</h2>
+<p th:text="${msgRech}">Pago rechazado.</p>
+<a th:href="@{/productos}">Volver al listado de productos</a>
+</body>
+</html>

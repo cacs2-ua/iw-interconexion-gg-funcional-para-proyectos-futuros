@@ -1,0 +1,88 @@
+---- IMPORTANTE -----
+
+
+
+
+RECORDAR NO PONER "localhost" EN LA url_back al hacer docker compose up --build, ya que ahí localhost se refiere al contenedor de Docker de la aplicación, NO SE REFIERE al host de mi máquina actual. Para solucionar esto, si la app se arranca con docker compose up --build, entonces en la url_back del comercio sustituir "localhost" por la ip real el host obtenida tras ejecutar el comando "ipconfig".
+
+
+
+docker run --name db-iweb -e POSTGRES_USER=iweb -e POSTGRES_PASSWORD=iweb -e POSTGRES_DB=iweb -p 5432:5432 -d postgres:13
+
+
+server.port=8157
+
+
+
+
+---- BACKUP ----
+
+
+docker cp /ruta/completa/del/archivo/backup.sql <container_name>:/backup.sql
+
+
+
+
+docker exec -it <container_name> bash
+
+
+
+psql -U <username> -d <database_name> -f /backup.sql
+
+
+
+docker cp a7d0ebd39dfa:/nice-backup.sql "C:\Users\Cris-SX\Desktop\nice-backup.sql"
+
+
+
+
+exit
+
+
+
+
+docker run --name db-iweb -e POSTGRES_USER=iweb -e POSTGRES_PASSWORD=iweb -e POSTGRES_DB=iweb -p 5432:5432 -d postgres:13
+
+
+
+
+
+
+docker cp backup17012025.sql db-iweb:/gg-backup.sql
+
+
+
+
+
+docker exec -it db-iweb bash
+
+
+
+psql -U iweb -d iweb -f /gg-backup.sql
+
+
+
+---- ESTOS COMANDOS SON PARA GUARDAR UN NUEVO BACKUP ----
+
+pg_dump -U iweb -d iweb > /definitive-backup.sql
+
+
+docker cp db-iweb:/definitive-backup.sql "C:\Users\Cris-SX\Desktop\definitive-backup.sql"
+
+---- ESTOS COMANDOS SON PARA GUARDAR UN NUEVO BACKUP ----
+
+
+
+comercio-default@gmail.com
+
+
+
+user@gmail.com
+
+
+0002000200020002
+
+
+02/09
+
+111
