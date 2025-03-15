@@ -12,7 +12,7 @@ services:
 
   db:
     image: postgres:15
-    container_name: postgres
+    container_name: postgres_tpvv
     restart: always
     ports:
       - "5462:5432"
